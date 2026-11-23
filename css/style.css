@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --bg-dark: #1b2e23;
+  --surface-dark: #243d2f;
+  --green-primary: #52b788;
+  --banner-gradient: linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #52b788 100%);
+  --gold-accent: #ffb703;
+  --gold-gradient: linear-gradient(135deg, #ffb703, #fb8500);
+  --text-light: #f8f9fa;
+  --text-muted: #d8f3dc;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--surface-dark);
+  border-bottom: 2px solid rgba(82, 183, 136, 0.4);
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  color: var(--gold-accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold-accent);
+}
+
+.hero {
+  background: linear-gradient(rgba(27, 46, 35, 0.75), rgba(27, 46, 35, 0.85)), var(--banner-gradient);
+  color: white;
+  text-align: center;
+  padding: 6rem 1.5rem;
+  border-bottom: 4px solid var(--gold-accent);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, #ffffff, #b7e4c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #e9f5ed;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-sub {
+  background: linear-gradient(rgba(27, 46, 35, 0.8), rgba(27, 46, 35, 0.9)), var(--banner-gradient);
+  color: white;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  border-bottom: 4px solid var(--gold-accent);
+}
+
+.hero-sub h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.hero-sub p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-primary {
+  background: var(--gold-gradient);
+  color: #1b2e23;
+  font-weight: 700;
+}
+
+.btn-secondary {
+  border: 2px solid #74c69d;
+  color: white;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 3.5rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--gold-accent);
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--surface-dark);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #74c69d;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--gold-accent);
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+.fb-feed-wrapper {
+  width: 100%;
+  max-width: 820px;
+  height: 560px;
+  margin: 0 auto;
+  background-color: var(--surface-dark);
+  padding: 12px;
+  border-radius: 0;
+  border-top: 4px solid var(--gold-accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fb-scale-box {
+  width: 500px;
+  height: 350px;
+  transform: scale(1.58);
+  transform-origin: center center;
+}
+
+.fb-scale-box iframe {
+  border-radius: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+  .fb-feed-wrapper {
+    width: 100%;
+    height: 520px;
+  }
+  .fb-scale-box {
+    transform: scale(2);
+    width: 100%;
+  }
+}
+
+footer {
+  background-color: var(--surface-dark);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(116, 198, 157, 0.2);
+}
+.container-news {
+  max-width: 1250px;
+  width: 100%;
+  margin: 3.5rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+.feeds-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.feed-subtitle {
+  color: var(--gold-accent);
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.feed-main-col .fb-feed-wrapper {
+  width: 100%;
+  height: 520px;
+  margin: 0;
+  background-color: var(--surface-dark);
+  padding: 12px;
+  border-top: 4px solid var(--gold-accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.feed-main-col .fb-scale-box {
+  width: 500px;
+  height: 350px;
+  transform: scale(1.25);
+  transform-origin: center center;
+}
+
+.feed-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sub-feed-card {
+  background-color: var(--surface-dark);
+  padding: 1rem;
+  border-top: 4px solid var(--gold-accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sub-feed-title {
+  color: var(--gold-accent);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sub-feed-box {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sub-feed-box iframe {
+  width: 100%;
+  height: 140px;
+}
+
+@media (max-width: 1024px) {
+  .feeds-layout {
+    grid-template-columns: 1fr;
+  }
+}
