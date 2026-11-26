@@ -234,49 +234,6 @@ body {
   text-align: justify;
 }
 
-.fb-feed-wrapper {
-  width: 100%;
-  max-width: 820px;
-  height: 560px;
-  margin: 0 auto;
-  background-color: var(--surface-dark);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border-glass);
-  border-top: 4px solid var(--gold-accent);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.fb-scale-box {
-  width: 500px;
-  height: 350px;
-  transform: scale(1.58);
-  transform-origin: center center;
-}
-
-.fb-scale-box iframe {
-  border-radius: 0;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (max-width: 860px) {
-  .fb-feed-wrapper {
-    width: 100%;
-    height: 520px;
-  }
-  .fb-scale-box {
-    transform: scale(2);
-    width: 100%;
-  }
-}
-
 footer {
   background-color: var(--surface-dark);
   backdrop-filter: blur(14px);
@@ -377,12 +334,6 @@ footer {
 .sub-feed-box iframe {
   width: 100%;
   height: 140px;
-}
-
-@media (max-width: 1024px) {
-  .feeds-layout {
-    grid-template-columns: 1fr;
-  }
 }
 
 .chat-widget {
@@ -583,4 +534,99 @@ footer {
 
 .chat-messenger-link:hover {
   text-decoration: underline;
+}
+
+/* auto adjust para sa different devices */
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    gap: 16px;
+    font-size: 0.95rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  
+  .hero-sub h1 {
+    font-size: 2rem;
+  }
+  
+  .feeds-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .brand-text .school-name {
+    font-size: 0.95rem;
+  }
+  
+  .tagline {
+    font-size: 0.7rem;
+  }
+  
+  .nav-links {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .hero {
+    padding: 4rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .hero-sub {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-sub h1 {
+    font-size: 1.6rem;
+  }
+  
+  .container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .chat-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  .chat-toggle-btn {
+    padding: 0.75rem 1.1rem;
+    font-size: 0.85rem;
+  }
+  
+  .chat-box {
+    width: calc(100vw - 32px);
+    height: 400px;
+  }
 }
