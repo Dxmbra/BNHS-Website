@@ -1,65 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BNHS | Official Website</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="brand">
-        <img src="images/logo.png" alt="BNHS Logo" class="logo-img" />
-        <div class="brand-text">
-          <span class="school-name">Bulusan National High School</span>
-          <span class="tagline">Excellence &bull; Integrity &bull; Service</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNHS | Official Website</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <img src="../images/logo.png" alt="BNHS Logo" class="logo-img">
+      <div class="brand-text">
+        <span class="school-name">Bulusan National High School</span>
+        <span class="tagline">Excellence &bull; Integrity &bull; Service</span>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to BNHS</h1>
+      <p>Shaping future-ready learners through quality education and community values.</p>
+      <div class="hero-buttons">
+        <a href="academics.html" class="btn btn-primary">Explore Programs</a>
+        <button type="button" class="btn btn-secondary" onclick="openStaffChat()">Chat with Staff</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">Campus Highlights</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Junior &amp; Senior High</h3>
+        <p>Offering complete Junior High education alongside Senior High Academic (STEM, ABM, HUMSS) and Technical-Vocational-Livelihood (TVL) tracks.</p>
+      </article>
+      <article class="card">
+        <h3>Student Organizations</h3>
+        <p>Home to active student clubs, leadership councils, and the award-winning Bulusan Ambassador Band.</p>
+      </article>
+      <article class="card">
+        <h3>Community Values</h3>
+        <p>Rooted in excellence, integrity, and service to nurture well-rounded citizens of Bulusan, Sorsogon.</p>
+      </article>
+    </div>
+  </main>
+
+  <div class="chat-widget">
+    <div class="chat-box" id="staffChatBox">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <span class="chat-header-title">BNHS Enrollment &amp; Help Desk</span>
+          <span class="chat-header-status"><span class="status-dot"></span> Staff Inquiry Support</span>
         </div>
+        <button type="button" class="chat-close-btn" onclick="toggleStaffChat()">&times;</button>
       </div>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="academics.html">Academics</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to BNHS</h1>
-        <p>Shaping future-ready learners through quality education and community values.</p>
-        <div class="hero-buttons">
-          <a href="academics.html" class="btn btn-primary">Explore Programs</a>
-          <a href="news.html" class="btn btn-secondary">Latest Updates</a>
-        </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg staff">Magandang araw! Welcome to Bulusan National High School. How can our staff help you with enrollment or school concerns today?</div>
       </div>
-    </section>
-
-    <main class="container">
-      <h2 class="section-title">Campus Highlights</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Junior &amp; Senior High</h3>
-          <p>
-            Offering complete K-12 academic and technical-vocational tracks tailored for college and career readiness.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Student Organizations</h3>
-          <p>Home to active student clubs, leadership councils, and the award-winning Bulusan Ambassador Band.</p>
-        </article>
-        <article class="card">
-          <h3>Community Values</h3>
-          <p>Rooted in excellence, integrity, and service to nurture well-rounded citizens of Bulusan, Sorsogon.</p>
-        </article>
+      <div class="chat-quick-replies">
+        <button type="button" class="quick-btn" onclick="sendQuickInquiry('Enrollment Requirements')">Enrollment Requirements</button>
+        <button type="button" class="quick-btn" onclick="sendQuickInquiry('SHS Tracks & Strands')">SHS Tracks &amp; Strands</button>
+        <button type="button" class="quick-btn" onclick="sendQuickInquiry('School Schedule')">School Schedule</button>
       </div>
-    </main>
+      <form class="chat-input-area" onsubmit="handleChatSubmit(event)">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your inquiry..." required>
+        <button type="submit" class="chat-send-btn">Send</button>
+      </form>
+      <a href="https://m.me/OfficialBNHSpage" target="_blank" rel="noopener noreferrer" class="chat-messenger-link">Continue directly on Official BNHS Messenger &rarr;</a>
+    </div>
+    <button type="button" class="chat-toggle-btn" onclick="toggleStaffChat()">
+      <span>&#128172; Chat with Staff</span>
+    </button>
+  </div>
 
-    <footer>
-      <p>&copy; 2026 Bulusan National High School. All rights reserved.</p>
-    </footer>
-  </body>
+  <footer>
+    <p>&copy; 2026 Bulusan National High School. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleStaffChat() {
+      document.getElementById('staffChatBox').classList.toggle('open');
+    }
+
+    function openStaffChat() {
+      document.getElementById('staffChatBox').classList.add('open');
+      document.getElementById('chatInput').focus();
+    }
+
+    function appendMessage(text, sender) {
+      const container = document.getElementById('chatMessages');
+      const msg = document.createElement('div');
+      msg.className = 'chat-msg ' + sender;
+      msg.textContent = text;
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function getStaffReply(query) {
+      const q = query.toLowerCase();
+      if (q.includes('requirement') || q.includes('enroll')) {
+        return 'For enrollment, please prepare your PSA Birth Certificate, SF9 (Report Card), Good Moral Certificate, and accomplished Learner Enrollment Survey Form (LESF). You may visit the BNHS Registrar Office or message our official Facebook page for schedule details.';
+      }
+      if (q.includes('track') || q.includes('strand') || q.includes('stem') || q.includes('abm') || q.includes('humss') || q.includes('tvl')) {
+        return 'BNHS offers Junior High School (Grades 7–10) and Senior High School under the Academic Track (STEM, ABM, HUMSS) and the Technical-Vocational-Livelihood (TVL) Track.';
+      }
+      if (q.includes('schedule') || q.includes('office') || q.includes('time')) {
+        return 'The BNHS Admin and Registrar Offices are open Monday to Friday, from 8:00 AM to 5:00 PM.';
+      }
+      return 'Thank you for your message! Our admissions staff has noted your concern. For faster live assistance from a staff member, you can also click the Messenger link below to chat directly with our official page.';
+    }
+
+    function sendQuickInquiry(topic) {
+      appendMessage(topic, 'user');
+      setTimeout(function() {
+        appendMessage(getStaffReply(topic), 'staff');
+      }, 450);
+    }
+
+    function handleChatSubmit(event) {
+      event.preventDefault();
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+      appendMessage(text, 'user');
+      input.value = '';
+      setTimeout(function() {
+        appendMessage(getStaffReply(text), 'staff');
+      }, 450);
+    }
+  </script>
+
+</body>
 </html>

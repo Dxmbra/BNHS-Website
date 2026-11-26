@@ -1,69 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BNHS | Academics &amp; Programs</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="brand">
-        <img src="images/logo.png" alt="BNHS Logo" class="logo-img" />
-        <div class="brand-text">
-          <span class="school-name">Bulusan National High School</span>
-          <span class="tagline">Excellence &bull; Integrity &bull; Service</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNHS | Academics &amp; Programs</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <img src="../images/logo.png" alt="BNHS Logo" class="logo-img">
+      <div class="brand-text">
+        <span class="school-name">Bulusan National High School</span>
+        <span class="tagline">Excellence &bull; Integrity &bull; Service</span>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html" class="active">Academics</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-sub">
+    <h1>Academic Programs</h1>
+    <p>Discover our comprehensive K-12 curriculum designed to prepare students for higher education, entrepreneurship, and professional success.</p>
+    <div class="hero-buttons" style="margin-top: 1.5rem;">
+      <button type="button" class="btn btn-primary" onclick="openStaffChat()">Ask Staff About Enrollment</button>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">Offered Tracks &amp; Curricula</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Junior High School (Grades 7–10)</h3>
+        <p>Building a strong foundational education under the K-12 Basic Education Curriculum, focusing on core competencies in Science, Mathematics, Languages, Social Studies, and TLE.</p>
+      </article>
+      <article class="card">
+        <h3>Senior High School – Academic Track</h3>
+        <p>Preparing college-bound learners through specialized strands in <strong>Science, Technology, Engineering, and Mathematics (STEM)</strong>, <strong>Accountancy, Business, and Management (ABM)</strong>, and <strong>Humanities and Social Sciences (HUMSS)</strong>.</p>
+      </article>
+      <article class="card">
+        <h3>Technical-Vocational-Livelihood (TVL) Track</h3>
+        <p>Equipping students with practical, industry-ready technical and vocational skills tailored for immediate employment, entrepreneurship, or advanced technical training.</p>
+      </article>
+    </div>
+  </main>
+
+  <div class="chat-widget">
+    <div class="chat-box" id="staffChatBox">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <span class="chat-header-title">BNHS Enrollment &amp; Help Desk</span>
+          <span class="chat-header-status"><span class="status-dot"></span> Staff Inquiry Support</span>
         </div>
+        <button type="button" class="chat-close-btn" onclick="toggleStaffChat()">&times;</button>
       </div>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="academics.html" class="active">Academics</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="hero-sub">
-      <h1>Academic Programs</h1>
-      <p>
-        Discover our comprehensive curriculum designed to prepare students for higher education and professional
-        success.
-      </p>
-    </section>
-
-    <main class="container">
-      <h2 class="section-title">Offered Tracks &amp; Curricula</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Junior High School (Grades 7–10)</h3>
-          <p>
-            Following the K-12 Basic Education Curriculum, focusing on core subjects like Mathematics, Science, English,
-            Filipino, Araling Panlipunan, and TLE.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Senior High School - Academic Track</h3>
-          <p>
-            Preparing learners for college with specialized strands including General Academic Strand (GAS) and
-            Humanities and Social Sciences (HUMSS).
-          </p>
-        </article>
-        <article class="card">
-          <h3>Senior High School - TVL Track</h3>
-          <p>
-            Equipping students with technical-vocational skills for immediate employment, entrepreneurship, or technical
-            education progression.
-          </p>
-        </article>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg staff">Magandang araw! Have questions about STEM, ABM, HUMSS, TVL, or enrollment requirements? Ask our staff below!</div>
       </div>
-    </main>
+      <div class="chat-quick-replies">
+        <button type="button" class="quick-btn" onclick="sendQuickInquiry('Enrollment Requirements')">Enrollment Requirements</button>
+        <button type="button" class="quick-btn" onclick="sendQuickInquiry('SHS Tracks & Strands')">SHS Tracks &amp; Strands</button>
+        <button type="button" class="quick-btn" onclick="sendQuickInquiry('School Schedule')">School Schedule</button>
+      </div>
+      <form class="chat-input-area" onsubmit="handleChatSubmit(event)">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your inquiry..." required>
+        <button type="submit" class="chat-send-btn">Send</button>
+      </form>
+      <a href="https://m.me/OfficialBNHSpage" target="_blank" rel="noopener noreferrer" class="chat-messenger-link">Continue directly on Official BNHS Messenger &rarr;</a>
+    </div>
+    <button type="button" class="chat-toggle-btn" onclick="toggleStaffChat()">
+      <span>&#128172; Chat with Staff</span>
+    </button>
+  </div>
 
-    <footer>
-      <p>&copy; 2026 Bulusan National High School. All rights reserved.</p>
-    </footer>
-  </body>
+  <footer>
+    <p>&copy; 2026 Bulusan National High School. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleStaffChat() {
+      document.getElementById('staffChatBox').classList.toggle('open');
+    }
+
+    function openStaffChat() {
+      document.getElementById('staffChatBox').classList.add('open');
+      document.getElementById('chatInput').focus();
+    }
+
+    function appendMessage(text, sender) {
+      const container = document.getElementById('chatMessages');
+      const msg = document.createElement('div');
+      msg.className = 'chat-msg ' + sender;
+      msg.textContent = text;
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function getStaffReply(query) {
+      const q = query.toLowerCase();
+      if (q.includes('requirement') || q.includes('enroll')) {
+        return 'For enrollment, please prepare your PSA Birth Certificate, SF9 (Report Card), Good Moral Certificate, and accomplished Learner Enrollment Survey Form (LESF). You may visit the BNHS Registrar Office or message our official Facebook page for schedule details.';
+      }
+      if (q.includes('track') || q.includes('strand') || q.includes('stem') || q.includes('abm') || q.includes('humss') || q.includes('tvl')) {
+        return 'BNHS offers Junior High School (Grades 7–10) and Senior High School under the Academic Track (STEM, ABM, HUMSS) and the Technical-Vocational-Livelihood (TVL) Track.';
+      }
+      if (q.includes('schedule') || q.includes('office') || q.includes('time')) {
+        return 'The BNHS Admin and Registrar Offices are open Monday to Friday, from 8:00 AM to 5:00 PM.';
+      }
+      return 'Thank you for your message! Our admissions staff has noted your concern. For faster live assistance from a staff member, you can also click the Messenger link below to chat directly with our official page.';
+    }
+
+    function sendQuickInquiry(topic) {
+      appendMessage(topic, 'user');
+      setTimeout(function() {
+        appendMessage(getStaffReply(topic), 'staff');
+      }, 450);
+    }
+
+    function handleChatSubmit(event) {
+      event.preventDefault();
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+      appendMessage(text, 'user');
+      input.value = '';
+      setTimeout(function() {
+        appendMessage(getStaffReply(text), 'staff');
+      }, 450);
+    }
+  </script>
+
+</body>
 </html>
